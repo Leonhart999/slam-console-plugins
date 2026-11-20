@@ -4,6 +4,35 @@
   "updated": "2026-11-21",
   "plugins": [
     {
+      "id": "loop_closures",
+      "version": "0.1.0",
+      "api": 1,
+      "name": {
+        "zh": "回环检查",
+        "en": "Loop closure check"
+      },
+      "description": {
+        "zh": "用 MapClosures 在地图的原始扫描里找出建图时重复经过的地方（回环），把每个回环实测的相对位姿和 SLAM 轨迹给出的相对位姿对比，得到回环处的平移、高度和航向误差，即没有真值时也能看出里程计漂了多少；可用 KISS-ICP 细配准并验证。输出回环图、回环表和 CSV。需要带原始扫描的地图（回放时打开“保存原始扫描”）。基于 MapClosures（MIT）和 KISS-ICP（MIT）。",
+        "en": "Uses MapClosures to find the places a mapping run visited twice in the raw scans of a map (loop closures) and compares the relative pose measured at every closure with the one the SLAM trajectory implies: translation, height and heading error at the loop, that is, how far the odometry had drifted, without ground truth. Optional KISS-ICP refinement and check. Writes a loop plot, a closure table and CSV. Needs a map with raw scans (turn on Save raw scans when playing back). Uses MapClosures (MIT) and KISS-ICP (MIT)."
+      },
+      "author": "Leonhart999",
+      "license": "MIT",
+      "homepage": "https://github.com/Leonhart999/MapClosures/tree/main/robot_console_plugin/loop_closures",
+      "source": "https://github.com/Leonhart999/MapClosures/tree/HEAD/robot_console_plugin/loop_closures",
+      "upstream": "https://github.com/PRBonn/MapClosures",
+      "requirements": [
+        "map_closures==2.2.0",
+        "kiss-icp==1.3.0",
+        "numpy>=2.1,<2.3",
+        "pillow>=9",
+        "pyyaml>=6"
+      ],
+      "url": "https://github.com/Leonhart999/MapClosures/releases/download/console-loop_closures-v0.1.0/loop_closures-0.1.0.zip",
+      "sha256": "d0356723624da254fe1ed7d8be808e88de4d82c628d23d7003c7afa83b2de118",
+      "size": 70877,
+      "published": "2026-11-21"
+    },
+    {
       "id": "map_eval",
       "version": "0.1.0",
       "api": 1,
