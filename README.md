@@ -48,7 +48,8 @@ into the plugin's own virtual environment when the user asks for it.
 3. Here: `python3 tools/add_entry.py path/to/<id>-<version>.entry.json --check-url` (downloads the zip and compares
    size and SHA-256), commit and push `index.json`.
 
-The plugin interface is described in the console's `docs/plugins.md`.
+The plugin interface is described in the console's `docs/plugins.md`. Development rules, UI design requirements and
+submission checks are documented in [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## Licence
 
