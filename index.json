@@ -1,7 +1,7 @@
 {
   "format": 1,
   "name": "SLAM & AutoNav console plugins",
-  "updated": "2026-11-21",
+  "updated": "2026-11-22",
   "plugins": [
     {
       "id": "loop_closures",
@@ -59,6 +59,35 @@
       "sha256": "c5176a4acd5186902ff45348a7a2ffbf76afa3ee32b23a4cc9def9052c6edd60",
       "size": 79707,
       "published": "2026-11-21"
+    },
+    {
+      "id": "map_merge",
+      "version": "0.1.0",
+      "api": 1,
+      "name": {
+        "zh": "地图拼接配准",
+        "en": "Map alignment & merge"
+      },
+      "description": {
+        "zh": "用 KISS-Matcher（MIT）在不需要初始位姿的前提下全局配准两张不同会话或坐标系的 3D 地图点云，再用 small_gicp（MIT）做 GICP/VGICP 精配准并可视化拼接前后的重叠俯视图；确认后可按体素去重合并两张地图，通过控制台派生接口保存为新的导航地图版本（自动重投影或保留栅格）。",
+        "en": "Globally aligns two 3D maps from different sessions or coordinate frames without an initial guess using KISS-Matcher (MIT), refines the 6-DoF transform with small_gicp GICP/VGICP, previews the merged overlap, and saves the voxel-merged point cloud as a new derived map version in the console library."
+      },
+      "author": "Leonhart999",
+      "license": "MIT",
+      "homepage": "https://github.com/Leonhart999/KISS-Matcher/tree/main/robot_console_plugin/map_merge",
+      "source": "https://github.com/Leonhart999/KISS-Matcher/tree/HEAD/robot_console_plugin/map_merge",
+      "upstream": "https://github.com/MIT-SPARK/KISS-Matcher",
+      "requirements": [
+        "kiss-matcher==1.0.2",
+        "small_gicp==1.0.1",
+        "numpy>=1.23,<3",
+        "pillow>=9",
+        "pyyaml>=6"
+      ],
+      "url": "https://github.com/Leonhart999/KISS-Matcher/releases/download/console-map_merge-v0.1.0/map_merge-0.1.0.zip",
+      "sha256": "f765ee5bc4be8e335b1462e13af3888f1c8bf9cfaa4e291f3e753b7768caab33",
+      "size": 52690,
+      "published": "2026-11-22"
     }
   ]
 }

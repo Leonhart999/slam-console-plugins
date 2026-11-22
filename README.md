@@ -12,6 +12,7 @@ is a release asset of that fork.
 |---|---|---|
 | `map_eval` Map quality evaluation | [Leonhart999/small_gicp](https://github.com/Leonhart999/small_gicp/tree/master/robot_console_plugin) ([koide3/small_gicp](https://github.com/koide3/small_gicp), MIT) | Registers a map onto a reference cloud (another map, or an uploaded PCD/PLY) and computes accuracy, completeness, precision, F-score and Chamfer distance, with an error-coloured top view. |
 | `loop_closures` Loop closure check | [Leonhart999/MapClosures](https://github.com/Leonhart999/MapClosures/tree/main/robot_console_plugin) ([PRBonn/MapClosures](https://github.com/PRBonn/MapClosures), MIT) | Finds the places a mapping run revisited (maps recorded with *Save raw scans*) and measures how far the SLAM odometry had drifted at each loop. |
+| `map_merge` Map alignment & merge | [Leonhart999/KISS-Matcher](https://github.com/Leonhart999/KISS-Matcher/tree/main/robot_console_plugin) ([MIT-SPARK/KISS-Matcher](https://github.com/MIT-SPARK/KISS-Matcher), MIT) | Globally aligns two 3D maps from different sessions or arbitrary frames without an initial guess (KISS-Matcher + small_gicp refinement), previews overlap, and saves a voxel-merged derived map version. |
 
 The console also ships three tool plugins of its own (bag converter, ground segmentation, dynamic object removal) and
 the AI assistant; they are not listed here.
