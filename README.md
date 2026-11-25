@@ -5,17 +5,20 @@ console's **Plugins → Plugin market** tab reads [`index.json`](index.json) fro
 entry, checks its size and SHA-256 and unpacks it into the plugin folder. Installed plugins start disabled; enable
 them, install their Python packages and restart the console.
 
-Each plugin lives in a fork of the open-source project it is built on, in `robot_console_plugin/<id>/`, and its zip
-is a release asset of that fork.
+The index lists both external market plugins (each maintained in its own repository) and the plugins bundled with the
+console (published here as `bundled-<id>-v<version>` release assets so every plugin is visible in one catalog and can
+be updated independently from the market without reinstalling the console).
 
-| Plugin | Repository (upstream) | What it does |
-|---|---|---|
-| `map_eval` Map quality evaluation | [Leonhart999/small_gicp](https://github.com/Leonhart999/small_gicp/tree/master/robot_console_plugin) ([koide3/small_gicp](https://github.com/koide3/small_gicp), MIT) | Registers a map onto a reference cloud (another map, or an uploaded PCD/PLY) and computes accuracy, completeness, precision, F-score and Chamfer distance, with an error-coloured top view. |
-| `loop_closures` Loop closure check | [Leonhart999/MapClosures](https://github.com/Leonhart999/MapClosures/tree/main/robot_console_plugin) ([PRBonn/MapClosures](https://github.com/PRBonn/MapClosures), MIT) | Finds the places a mapping run revisited (maps recorded with *Save raw scans*) and measures how far the SLAM odometry had drifted at each loop. |
-| `map_merge` Map alignment & merge | [Leonhart999/KISS-Matcher](https://github.com/Leonhart999/KISS-Matcher/tree/main/robot_console_plugin) ([MIT-SPARK/KISS-Matcher](https://github.com/MIT-SPARK/KISS-Matcher), MIT) | Globally aligns two 3D maps from different sessions or arbitrary frames without an initial guess (KISS-Matcher + small_gicp refinement), previews overlap, and saves a voxel-merged derived map version. |
-
-The console also ships three tool plugins of its own (bag converter, ground segmentation, dynamic object removal) and
-the AI assistant; they are not listed here.
+| Plugin | Distribution | Repository (upstream) | What it does |
+|---|---|---|---|
+| `ai_assistant` AI assistant | Bundled + Market | [Leonhart999/slam-autonav-console](https://github.com/Leonhart999/slam-autonav-console/tree/main/robot_console/plugins/ai_assistant) | Header chat drawer backed by user-configured OpenAI-compatible / Anthropic endpoints or embedded CPA OAuth accounts, with read/run console tools, history and usage stats. |
+| `bag_convert` Bag converter | Bundled + Market | [Leonhart999/slam-autonav-console](https://github.com/Leonhart999/slam-autonav-console/tree/main/robot_console/plugins/bag_convert) ([ternaris/rosbags](https://gitlab.com/ternaris/rosbags), Apache-2.0) | Converts ROS1 `.bag` files (including Livox `CustomMsg`) into ROS2 sqlite3/MCAP bags for the Playback page. |
+| `dynamic_removal` Dynamic object removal | Bundled + Market | [Leonhart999/slam-autonav-console](https://github.com/Leonhart999/slam-autonav-console/tree/main/robot_console/plugins/dynamic_removal) ([KTH-RPL/dufomap](https://github.com/KTH-RPL/dufomap), BSD-3) | Removes points left by moving objects from maps with raw scans using DUFOMap and saves a cleaned derived map version. |
+| `eye_care_ui` Eye-care anti-blue-light UI | Bundled + Market | [Leonhart999/slam-autonav-console](https://github.com/Leonhart999/slam-autonav-console/tree/main/robot_console/plugins/eye_care_ui) | Adds a warm amber low-blue-light UI theme with live filter strength, warmth and contrast controls. |
+| `ground_seg` Ground segmentation | Bundled + Market | [Leonhart999/slam-autonav-console](https://github.com/Leonhart999/slam-autonav-console/tree/main/robot_console/plugins/ground_seg) ([url-kaist/patchwork-plusplus](https://github.com/url-kaist/patchwork-plusplus), BSD-2) | Segments ground/non-ground with Patchwork++ and rebuilds the 2D occupancy grid from height above local ground. |
+| `loop_closures` Loop closure check | Market | [Leonhart999/MapClosures](https://github.com/Leonhart999/MapClosures/tree/main/robot_console_plugin) ([PRBonn/MapClosures](https://github.com/PRBonn/MapClosures), MIT) | Finds the places a mapping run revisited (maps recorded with *Save raw scans*) and measures how far the SLAM odometry had drifted at each loop. |
+| `map_eval` Map quality evaluation | Market | [Leonhart999/small_gicp](https://github.com/Leonhart999/small_gicp/tree/master/robot_console_plugin) ([koide3/small_gicp](https://github.com/koide3/small_gicp), MIT) | Registers a map onto a reference cloud (another map, or an uploaded PCD/PLY) and computes accuracy, completeness, precision, F-score and Chamfer distance, with an error-coloured top view. |
+| `map_merge` Map alignment & merge | Market | [Leonhart999/KISS-Matcher](https://github.com/Leonhart999/KISS-Matcher/tree/main/robot_console_plugin) ([MIT-SPARK/KISS-Matcher](https://github.com/MIT-SPARK/KISS-Matcher), MIT) | Globally aligns two 3D maps from different sessions or arbitrary frames without an initial guess (KISS-Matcher + small_gicp refinement), previews overlap, and saves a voxel-merged derived map version. |
 
 ## Index format
 
