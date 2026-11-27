@@ -1,7 +1,7 @@
 {
   "format": 1,
   "name": "SLAM & AutoNav console plugins",
-  "updated": "2026-11-27",
+  "updated": "2026-11-28",
   "plugins": [
     {
       "id": "ai_assistant",
@@ -219,7 +219,7 @@
     },
     {
       "id": "remote_control",
-      "version": "0.1.0",
+      "version": "0.2.1",
       "api": 1,
       "name": {
         "zh": "远程控制",
@@ -235,10 +235,10 @@
       "source": "https://github.com/Leonhart999/remote-control/tree/HEAD/robot_console_plugin/remote_control",
       "upstream": "https://github.com/Peteroooooooo/remote-control",
       "requirements": [],
-      "url": "https://github.com/Leonhart999/remote-control/releases/download/console-remote_control-v0.1.0/remote_control-0.1.0.zip",
-      "sha256": "e84e0c6a92b0beb57132390302f025b7cf0f1445ade1d2ded2e624e7f74285fc",
-      "size": 88238,
-      "published": "2026-11-27"
+      "url": "https://github.com/Leonhart999/remote-control/releases/download/console-remote_control-v0.2.1/remote_control-0.2.1.zip",
+      "sha256": "9d7e3362b0e677e10af8a0d7e571861d8749ae46d93a9e8ea61b5d35ab4a4f67",
+      "size": 108914,
+      "published": "2026-11-28"
     }
   ]
 }
