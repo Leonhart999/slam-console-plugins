@@ -1,7 +1,7 @@
 {
   "format": 1,
   "name": "SLAM & AutoNav console plugins",
-  "updated": "2026-11-25",
+  "updated": "2026-11-27",
   "plugins": [
     {
       "id": "ai_assistant",
@@ -216,6 +216,29 @@
       "sha256": "f765ee5bc4be8e335b1462e13af3888f1c8bf9cfaa4e291f3e753b7768caab33",
       "size": 52690,
       "published": "2026-11-22"
+    },
+    {
+      "id": "remote_control",
+      "version": "0.1.0",
+      "api": 1,
+      "name": {
+        "zh": "远程控制",
+        "en": "Remote control"
+      },
+      "description": {
+        "zh": "在运行控制台的这台 Windows 电脑上安装并管理 Remote Control（P2P 远程桌面，Apache-2.0），让手机 App 或其他 Windows 电脑远程控制这台电脑：一键下载安装、打开窗口、安装后台服务、生成连接码和二维码、查看设备、修改设置。需要控制台运行在 Windows 10/11 的 WSL 里。",
+        "en": "Installs and manages Remote Control (P2P remote desktop, Apache-2.0) on the Windows PC this console runs on, so a phone app or another Windows PC can control this computer: download and install, open its window, install the background service, generate connection codes with a QR code, list devices and change settings. Needs the console in WSL on Windows 10/11."
+      },
+      "author": "Leonhart999",
+      "license": "Apache-2.0",
+      "homepage": "https://github.com/Leonhart999/remote-control/tree/main/robot_console_plugin/remote_control",
+      "source": "https://github.com/Leonhart999/remote-control/tree/HEAD/robot_console_plugin/remote_control",
+      "upstream": "https://github.com/Peteroooooooo/remote-control",
+      "requirements": [],
+      "url": "https://github.com/Leonhart999/remote-control/releases/download/console-remote_control-v0.1.0/remote_control-0.1.0.zip",
+      "sha256": "e84e0c6a92b0beb57132390302f025b7cf0f1445ade1d2ded2e624e7f74285fc",
+      "size": 88238,
+      "published": "2026-11-27"
     }
   ]
 }
